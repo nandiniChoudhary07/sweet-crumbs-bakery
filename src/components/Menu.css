@@ -1,0 +1,112 @@
+.menu__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+/* ----- Category buttons ----- */
+.menu__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+/* ----- Search box ----- */
+.menu__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 1 280px;
+  color: var(--mocha);
+}
+
+.menu__search svg {
+  position: absolute;
+  left: 1rem;
+  pointer-events: none;
+}
+
+.menu__search input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.5rem 1rem 0.5rem 2.75rem;
+  border: 1.5px solid rgba(59, 36, 24, 0.16);
+  border-radius: 999px;
+  background: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.menu__search input::placeholder {
+  color: var(--mocha);
+}
+
+.menu__search input:focus {
+  outline: none;
+  border-color: var(--chocolate);
+  box-shadow: 0 0 0 4px rgba(156, 84, 80, 0.18);
+}
+
+.menu__count {
+  min-height: 1.5rem;
+  margin-block: 1.4rem 1.2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ----- Empty and error messages ----- */
+.menu__message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+  border: 1.5px dashed rgba(59, 36, 24, 0.2);
+  border-radius: var(--radius);
+  background: var(--white);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.menu__message svg {
+  color: var(--rose);
+}
+
+.menu__message h3 {
+  font-size: 1.39rem;
+}
+
+.menu__message .btn {
+  margin-top: 0.75rem;
+}
+
+.menu__note {
+  max-width: 640px;
+  margin: 2.5rem auto 0;
+  font-size: 0.88rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+@media (max-width: 700px) {
+  .menu__search {
+    flex: 1 1 100%;
+    order: -1;
+  }
+
+  /* Category buttons scroll sideways on phones instead of wrapping */
+  .menu__filters {
+    flex-wrap: nowrap;
+    margin-inline: calc(-1 * clamp(1.15rem, 4vw, 2.5rem));
+    padding-inline: clamp(1.15rem, 4vw, 2.5rem);
+    padding-block: 4px;
+    width: calc(100% + 2 * clamp(1.15rem, 4vw, 2.5rem));
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .menu__filters::-webkit-scrollbar {
+    display: none;
+  }
+}

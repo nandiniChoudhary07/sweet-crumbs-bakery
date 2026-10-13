@@ -1,0 +1,89 @@
+.bestsellers {
+  background: var(--cream);
+}
+
+/* Title on the left, "View All" on the right */
+.bestsellers__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.bestsellers__title {
+  font-size: clamp(1.64rem, 2.95vw, 2.3rem);
+}
+
+.bestsellers__carousel {
+  position: relative;
+}
+
+/* Sideways-scrolling row: four cards visible on a desktop */
+.bestsellers__row {
+  --gap: clamp(0.8rem, 1.6vw, 1.25rem);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 3 * var(--gap)) / 4);
+  gap: var(--gap);
+  padding-block: 6px 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.bestsellers__row::-webkit-scrollbar {
+  display: none;
+}
+
+.bestsellers__row > li {
+  scroll-snap-align: start;
+}
+
+/* ----- Round arrow buttons at the edges ----- */
+.bestsellers__arrow {
+  position: absolute;
+  top: 38%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--chocolate);
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.bestsellers__arrow:hover {
+  background: var(--chocolate);
+  color: var(--cream);
+}
+
+.bestsellers__arrow--previous {
+  left: -14px;
+}
+
+.bestsellers__arrow--next {
+  right: -14px;
+}
+
+@media (max-width: 1020px) {
+  .bestsellers__row {
+    grid-auto-columns: calc((100% - 2 * var(--gap)) / 3);
+  }
+}
+
+/* Phones: two cards and a peek of the next one, swipe to see more */
+@media (max-width: 700px) {
+  .bestsellers__row {
+    grid-auto-columns: 46%;
+  }
+
+  .bestsellers__arrow {
+    display: none;
+  }
+}

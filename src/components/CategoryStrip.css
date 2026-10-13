@@ -1,0 +1,86 @@
+/* Beige band with a soft dotted pattern */
+.category-strip {
+  padding-block: clamp(2.25rem, 5vw, 3.5rem);
+  background-color: var(--cream-deep);
+  background-image: radial-gradient(rgba(184, 134, 84, 0.16) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* Heading on the left, cards on the right */
+.category-strip__inner {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.28fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.category-strip__heading h2 {
+  font-size: clamp(1.64rem, 2.79vw, 2.3rem);
+  line-height: 1.1;
+}
+
+.category-strip__heading p {
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.category-strip__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.7rem, 1.4vw, 1.1rem);
+}
+
+.category-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--chocolate);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.category-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.category-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+
+.category-tile:hover img {
+  transform: scale(1.08);
+}
+
+/* Label over a dark fade at the bottom of the photo */
+.category-tile__label {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2.2rem 0.6rem 0.7rem;
+  background: linear-gradient(to top, rgba(40, 22, 13, 0.9), rgba(40, 22, 13, 0));
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .category-strip__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Phones: two cards per row */
+@media (max-width: 600px) {
+  .category-strip__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

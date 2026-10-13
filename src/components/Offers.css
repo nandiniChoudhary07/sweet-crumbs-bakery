@@ -1,0 +1,116 @@
+/* Dark chocolate band so the offers stand out from the cream sections */
+.offers {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(230, 195, 189, 0.14) 0, transparent 45%),
+    var(--chocolate);
+  color: var(--cream);
+}
+
+.offers .section-heading__title {
+  color: var(--cream);
+}
+
+.offers .section-heading__title em,
+.offers .eyebrow {
+  color: var(--pink);
+}
+
+.offers .section-heading__text {
+  color: rgba(251, 246, 238, 0.76);
+}
+
+.offers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(251, 246, 238, 0.14);
+  border-radius: var(--radius);
+  background: rgba(251, 246, 238, 0.06);
+}
+
+.offer-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.offer-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.offer-card:hover .offer-card__media img {
+  transform: scale(1.06);
+}
+
+.offer-card__label {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+}
+
+.offer-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+
+.offer-card__title {
+  font-size: 1.43rem;
+  color: var(--cream);
+}
+
+.offer-card__description {
+  margin-top: 0.6rem;
+  font-size: 0.97rem;
+  color: rgba(251, 246, 238, 0.78);
+}
+
+.offer-card__price {
+  margin-top: 1.1rem;
+  font-family: var(--font-heading);
+  font-size: 1.39rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--pink);
+}
+
+.offer-card__price s {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: rgba(251, 246, 238, 0.55);
+}
+
+.offer-card__note {
+  margin-top: 0.3rem;
+  margin-bottom: 1.4rem;
+  font-size: 0.86rem;
+  color: rgba(251, 246, 238, 0.7);
+}
+
+.offer-card .btn {
+  margin-top: auto;
+}
+
+.offer-card .btn:focus-visible,
+.offers :focus-visible {
+  outline-color: var(--pink);
+}
+
+@media (max-width: 980px) {
+  .offers__grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+}

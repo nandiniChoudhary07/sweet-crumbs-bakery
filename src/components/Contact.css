@@ -1,0 +1,169 @@
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: stretch;
+}
+
+/* ----- Details list ----- */
+.contact__list {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.contact__list > li {
+  display: flex;
+  gap: 1.15rem;
+}
+
+.contact__icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--pink-soft);
+  color: var(--rose);
+}
+
+.contact__list h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.23rem;
+}
+
+.contact__list h3 .badge {
+  font-family: var(--font-body);
+}
+
+.contact__list address {
+  margin-top: 0.3rem;
+  font-style: normal;
+  color: var(--cocoa);
+}
+
+.contact__list p {
+  margin-top: 0.3rem;
+  color: var(--cocoa);
+}
+
+.contact__link {
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
+}
+
+.contact__plain-link {
+  border-bottom: 1px solid var(--pink);
+  transition: border-color 0.2s;
+}
+
+.contact__plain-link:hover {
+  border-color: var(--chocolate);
+}
+
+.contact__hours {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 0.4rem;
+  color: var(--cocoa);
+}
+
+.contact__hours div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 2rem;
+  min-width: min(100%, 320px);
+}
+
+.contact__hours dd {
+  font-weight: 500;
+}
+
+.contact__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2.25rem;
+}
+
+/* ----- Photo + directions card ----- */
+.contact__map {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.contact__map img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact__map-card {
+  position: absolute;
+  left: 1.1rem;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--radius);
+  background: rgba(255, 253, 249, 0.96);
+  box-shadow: var(--shadow-md);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.contact__map-card > div {
+  flex: 1 1 180px;
+}
+
+.contact__map-pin {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--chocolate);
+  color: var(--cream);
+}
+
+.contact__map-title {
+  font-family: var(--font-heading);
+  font-size: 1.11rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--chocolate);
+}
+
+@media (max-width: 900px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__map {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact__buttons .btn {
+    width: 100%;
+  }
+
+  .contact__icon {
+    width: 44px;
+    height: 44px;
+  }
+}

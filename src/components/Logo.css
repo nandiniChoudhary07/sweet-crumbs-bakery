@@ -1,0 +1,66 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--chocolate);
+}
+
+.logo__mark {
+  flex-shrink: 0;
+}
+
+.logo__mark-bg {
+  fill: var(--chocolate);
+}
+
+.logo__mark-case {
+  fill: var(--pink);
+}
+
+.logo__mark-frosting {
+  fill: var(--cream);
+}
+
+.logo__mark-cherry {
+  fill: #c98a84;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo__name {
+  font-family: var(--font-heading);
+  font-size: 1.27rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.logo__sub {
+  margin-top: 0.25rem;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+/* Light version, used on the dark footer */
+.logo--light {
+  color: var(--cream);
+}
+
+.logo--light .logo__mark-bg {
+  fill: var(--cream);
+}
+
+.logo--light .logo__mark-frosting {
+  fill: var(--chocolate);
+}
+
+.logo--light .logo__sub {
+  color: var(--pink);
+}
